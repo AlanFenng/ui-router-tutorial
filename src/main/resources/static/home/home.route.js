@@ -13,9 +13,22 @@
                 url: '/',
                 views: {
                     '@': {
-                        templateUrl: 'home/views/home.html'
+                        templateUrl: 'home/views/home.html',
+                        controller: 'homeController',
+                        controllerAs: 'vm'
                     }
+                },
+                resolve: {
+                    loadDependencies: loadHomeDependencies
                 }
             })
+    }
+
+    loadHomeDependencies.$inject = ['$ocLazyLoad'];
+
+    function loadHomeDependencies($ocLazyLoad) {
+        return $ocLazyLoad.load([
+            'home/controllers/home.controller.js'
+        ]);
     }
 })();

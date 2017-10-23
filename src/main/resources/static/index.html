@@ -5,16 +5,23 @@
     <title>ui-router-tutorial</title>
     <script src="lib/angularjs/angular.js"></script>
     <script src="lib/angularuirouter/angular-ui-router.js"></script>
+    <script src="lib/angular-local-storage.js"></script>
+    <script src="lib/ocLazyLoad.js"></script>
 
     <!--inject:app-->
     <script src="app.module.js"></script>
     <script src="app.route.js"></script>
+
+    <script src="core/core.module.js"></script>
+    <script src="core/core.config.js"></script>
 
     <!--inject:home-->
     <script src="home/home.module.js"></script>
     <script src="home/home.route.js"></script>
 </head>
 <body ng-app="app">
-<ui-view></ui-view>
+<ui-view>
+    <h1>welcome to ui-router</h1>
+</ui-view>
 </body>
 </html>
