@@ -7254,7 +7254,7 @@ function $TemplateCacheProvider() {
  *         template:
  *           'Month: <input ng-model="$ctrl.month" ng-change="$ctrl.updateDate()">' +
  *           'Date: {{ $ctrl.date }}' +
- *           '<test date="$ctrl.date"></test>',
+ *           profiles.test,
  *         controller: function() {
  *           this.date = new Date();
  *           this.month = this.date.getMonth();
@@ -7263,7 +7263,7 @@ function $TemplateCacheProvider() {
  *           };
  *         }
  *       })
- *       .component('test', {
+ *       .component(profiles.test, {
  *         bindings: { date: '<' },
  *         template:
  *           '<pre>{{ $ctrl.log | json }}</pre>',
@@ -27239,7 +27239,7 @@ var ngControllerDirective = [function() {
             webdriver = require('selenium-webdriver');
           });
 
-          // For now, we only test on Chrome,
+          profiles.test
           // as Safari does not load the page with Protractor's injected scripts,
           // and Firefox webdriver always disables content security policy (#6358)
           if (browser.params.browser !== 'chrome') {
